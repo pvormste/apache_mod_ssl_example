@@ -1,0 +1,7 @@
+.DS_Store
+
+certs/*.pem
+certs/*.key
+certs/*.crt
+certs/*.csr
+certs/*.cnf

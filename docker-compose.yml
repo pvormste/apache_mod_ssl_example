@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  apache:
+    build:
+      context: ./apache
+    ports:
+      - "9443:443"
+    depends_on:
+      - json-backend
+    volumes:
+      # Mount certs into the httpd layout expected by the Dockerfile/config.
+      - ./certs:/usr/local/apache2/certs:ro
+    restart: unless-stopped
+
+  json-backend:
+    image: nginx:stable-alpine
+    volumes:
+      - ./backend:/usr/share/nginx/html:ro
+    restart: unless-stopped
