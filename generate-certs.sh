@@ -48,6 +48,7 @@ openssl x509 -req -in proxy-client.csr -CA upstream-ca.crt -CAkey upstream-ca.ke
 echo ""
 echo "=== Creating proxy client bundle (certificate + key) ==="
 cat proxy-client.crt proxy-client.key > proxy-client-bundle.pem
+chmod 600 proxy-client-bundle.pem
 
 echo ""
 echo "=== Cleaning up temporary files ==="
