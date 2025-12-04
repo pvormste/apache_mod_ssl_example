@@ -1,0 +1,4 @@
+{
+  "message": "This is a protected resource from the mTLS-secured upstream!",
+  "source": "mtls-upstream-server"
+}
