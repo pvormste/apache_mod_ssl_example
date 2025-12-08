@@ -15,6 +15,8 @@ services:
 
   json-backend:
     image: nginx:stable-alpine
+    ports:
+      - "9898:80"
     volumes:
       - ./backend:/usr/share/nginx/html:ro
     restart: unless-stopped
